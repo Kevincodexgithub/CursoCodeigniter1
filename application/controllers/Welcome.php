@@ -22,4 +22,10 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('welcome_message');
 	}
+	//la url se conforma de controlador,metodo y parametro
+	public function test($id,$hola = 'peru'){
+		echo "Hola mundo desde el controlador " . $id;
+		echo '<br>';
+		echo " Hola ".$hola;
+	}
 }

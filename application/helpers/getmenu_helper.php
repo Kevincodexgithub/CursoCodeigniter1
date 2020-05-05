@@ -7,7 +7,7 @@
             ),
             array(
                 'title' => 'Registro',
-                'url' => base_url('index.php/Registro'),  
+                'url' => base_url('/Registro'),  
             ),
         );
     }

@@ -31,5 +31,8 @@
         echo form_submit('submit','Enviar Datos');
         echo form_close();
     ?>
+    <?php 
+        isset($msg) ? $msg : ''
+    ?>
 </body>
 </html>

@@ -7,15 +7,16 @@ class Registro extends CI_Controller {
 	{
 		parent:: __construct();
 		$this->load->helper(array('getmenu'));		
-		$this->load->database();
+		//$this->load->database();
+		$this->load->model('Users');
 	}
 
 	public function index()
 	{
 		$data['menu'] = main_menu();
 		$this->load->view('registro',$data);
-		$query = $this->db->get('usuarios');
-		var_dump($query->result());
+		//$query = $this->db->get('usuarios');
+		//var_dump($query->result());
 	}
 	//la url se conforma de controlador,metodo y parametro
 	/*public function test($id,$hola = 'peru'){
@@ -29,8 +30,18 @@ class Registro extends CI_Controller {
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$password_confirm = $this->input->post('password_confirm');
+		//var_dump($username ." ". $email ." ". $password ." ". $password_confirm);
+		$datos = array(
+			'nombre_usuario' => $username,
+			'correo' => $email,
+			'contrasena' => $password,
+		);
+		$data['menu'] = main_menu();
 
-		var_dump($username ." ". $email ." ". $password ." ". $password_confirm);
+		if(!$this->Users->create($datos)){
+			$data['msg'] = 'Ocurrio un error al insertar los datos';
+			$this->load->view('registro');
+		}$data['msg'] = 'Registrado correctamente!';
 	}
 
 }

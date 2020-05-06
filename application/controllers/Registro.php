@@ -7,12 +7,15 @@ class Registro extends CI_Controller {
 	{
 		parent:: __construct();
 		$this->load->helper(array('getmenu'));		
+		$this->load->database();
 	}
 
 	public function index()
 	{
 		$data['menu'] = main_menu();
 		$this->load->view('registro',$data);
+		$query = $this->db->get('usuarios');
+		var_dump($query->result());
 	}
 	//la url se conforma de controlador,metodo y parametro
 	/*public function test($id,$hola = 'peru'){

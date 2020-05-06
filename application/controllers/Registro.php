@@ -6,7 +6,7 @@ class Registro extends CI_Controller {
 	public function __construct()
 	{
 		parent:: __construct();
-		$this->load->helper(array('getmenu'));
+		$this->load->helper(array('getmenu'));		
 	}
 
 	public function index()
@@ -20,5 +20,14 @@ class Registro extends CI_Controller {
 		echo '<br>';
 		echo " Hola ".$hola;
 	}*/
+
+	public function create(){
+		$username = $this->input->post('username');
+		$email = $this->input->post('email');
+		$password = $this->input->post('password');
+		$password_confirm = $this->input->post('password_confirm');
+
+		var_dump($username ." ". $email ." ". $password ." ". $password_confirm);
+	}
 
 }

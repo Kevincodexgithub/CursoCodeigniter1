@@ -7,13 +7,14 @@
 </head>
 <body>
     <h1>Registro</h1>
-
+    <ul>
     <?php foreach($menu as $item): ?>
         <li>
             <a href="<?php echo $item['url'] ?>"><?php echo $item['title'] ?></a>
         </li>
     <?php endforeach; ?>
-
+    </ul>
+    <?php echo validation_errors(); ?>
     <?php 
         echo form_open('registro/create',array('method' => 'POST'));
         echo form_label('Nombre de Usuario');
@@ -31,8 +32,8 @@
         echo form_submit('submit','Enviar Datos');
         echo form_close();
     ?>
-    <?php 
-        isset($msg) ? $msg : ''
-    ?>
+
+    <?= isset($msg) ? $msg : '' ?>
+    
 </body>
 </html>

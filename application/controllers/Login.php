@@ -14,6 +14,10 @@ class Login extends CI_Controller {
 		$data['menu'] = main_menu();
 		$this->load->view('login',$data);
 	}
+
+	public function Validate(){
+		
+	}
 	//la url se conforma de controlador,metodo y parametro
 	/*public function test($id,$hola = 'peru'){
 		echo "Hola mundo desde el controlador " . $id;

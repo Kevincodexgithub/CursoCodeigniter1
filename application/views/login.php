@@ -30,7 +30,7 @@
                         <label for="exampleInputPassword1">Contraseña</label>
                         <input type="password" name="password" placeholder="Ingrese su contraseña" class="form-control" id="exampleInputPassword1">
                         <div class="invalid-feedback">
-                            El correo está vacio
+                            La contraseña está vacio
                         </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Ingresar</button>

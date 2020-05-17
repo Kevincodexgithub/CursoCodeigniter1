@@ -13,9 +13,9 @@
             array(
                 'field' => 'password',
                 'label' => 'Contraseña',
-                'rules' => 'required|trim|',
+                'rules' => 'required|trim',
                 'errors' => array(
-                    'required' => 'El %s es requerido'
+                    'required' => 'La %s es requerida'
                 ),
             )
         );            

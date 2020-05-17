@@ -27,7 +27,7 @@ class Login extends CI_Controller {
 				'password' => form_error('password')
 			); 
 			echo json_encode($errors); 
-			
+			$this->output->set_status_header(400);
 		}
 		else{
 			/* $this->load->view('form_completado'); */

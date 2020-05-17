@@ -18,7 +18,7 @@
                     <div class="form-group">
                         <h1>Login</h1>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="email">
                         <label for="exampleInputEmail1">Correo</label>
                         <input type="email" name="email" placeholder="Ingrese su email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                         <!-- <small id="emailHelp" class="form-text text-muted">Ingrese su email ejemplo@gmail.com</small> -->
@@ -26,9 +26,12 @@
                             El correo está vacio
                         </div>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group" id="password">
                         <label for="exampleInputPassword1">Contraseña</label>
                         <input type="password" name="password" placeholder="Ingrese su contraseña" class="form-control" id="exampleInputPassword1">
+                        <div class="invalid-feedback">
+                            El correo está vacio
+                        </div>
                     </div>
                     <button type="submit" class="btn btn-primary">Ingresar</button>
                 </form>

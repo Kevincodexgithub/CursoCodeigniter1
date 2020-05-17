@@ -17,11 +17,17 @@ class Login extends CI_Controller {
 	}
 
 	public function Validate(){
+		$this->form_validation->set_error_delimiters('', '');
 		$rules = getLoginRules();
 		$this->form_validation->set_rules($rules);
 
 		if ($this->form_validation->run() == FALSE){
-			$this->load->view('login');
+			$errors = array(
+				'email' => form_error('email'),
+				'password' => form_error('password')
+			); 
+			echo json_encode($errors); 
+			
 		}
 		else{
 			/* $this->load->view('form_completado'); */

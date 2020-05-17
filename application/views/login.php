@@ -9,20 +9,12 @@
 </head>
 
 <body>
-    <!-- <h1>Login</h1>
-    <ul>
-    <?php foreach ($menu as $item) : ?>
-        <li>
-            <a href="<?php echo $item['url'] ?>"><?php echo $item['title'] ?></a>
-        </li>
-    <?php endforeach; ?>
-    <?php var_dump($menu) ?> 
-    </ul> -->
-    <?= validation_errors(); ?>
+    
+    
     <div class="container">
         <div class="row justify-content-lg-center">
             <div class="col-lg-6">
-                <form action="<?= base_url('login/validate') ?>" method="POST">                    
+                <form action="<?= base_url('login/validate') ?>" method="POST" id="frm_login">                    
                     <div class="form-group">
                         <h1>Login</h1>
                     </div>
@@ -44,7 +36,9 @@
 
         </div>
     </div>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
+    
 </body>
 
 </html>

@@ -18,6 +18,7 @@
     <?php endforeach; ?>
     <?php var_dump($menu) ?> 
     </ul> -->
+    <?= validation_errors(); ?>
     <div class="container">
         <div class="row justify-content-lg-center">
             <div class="col-lg-6">

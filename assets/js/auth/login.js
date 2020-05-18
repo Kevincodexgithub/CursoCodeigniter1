@@ -21,6 +21,9 @@
                         $("#password > div").html(json.password);
                         $("#password > input").addClass('is-invalid');
                     }
+                }else if(xhr.status == 401){
+                    var json = JSON.parse(xhr.responseText);
+                    console.log(json);
                 }
             },
         });

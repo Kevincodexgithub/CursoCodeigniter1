@@ -9,12 +9,12 @@
 </head>
 
 <body>
-    
-    
+
+
     <div class="container">
         <div class="row justify-content-lg-center">
             <div class="col-lg-6">
-                <form action="<?= base_url('login/validate') ?>" method="POST" id="frm_login">                    
+                <form action="<?= base_url('login/validate') ?>" method="POST" id="frm_login">
                     <div class="form-group">
                         <h1>Login</h1>
                     </div>
@@ -33,7 +33,10 @@
                             La contraseña está vacio
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary">Ingresar</button>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Ingresar</button>
+                    </div>
+                    <div class="form-group" id="alert"></div>
                 </form>
             </div>
 
@@ -41,7 +44,7 @@
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="<?= base_url('assets/js/auth/login.js') ?>"></script>
-    
+
 </body>
 
 </html>

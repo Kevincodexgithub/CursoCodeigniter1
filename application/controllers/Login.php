@@ -13,7 +13,7 @@ class Login extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('login');
+		$this->load->view('LoginView');
 		
 	}
 
@@ -38,10 +38,29 @@ class Login extends CI_Controller {
 				$this->output->set_status_header(401);
 				exit;
 			}else{
-				echo json_encode(array('msg' => 'Bienvenido'));
+				$data = array(
+					'id' => $res->id,
+					'rango' => $res->rango,
+					'status' => $res->status,
+					'nombre_usuario' => $res->nombre_usuario,
+					'is_logged' => TRUE
+				);
+				$this->session->set_userdata($data);
+				$this->session->set_flashdata('msg','Bienvenido al sistema '.$data['nombre_usuario']);
+				echo json_encode(array('url' => base_url('dashboard')));
 			}
 		}
 
+	}
+
+	public function Logout(){
+		$vars = array('id','rango','status','nombre_usuario','is_logged');
+		/* Borra todas las variables de sesión */
+		$this->session->unset_userdata($vars);
+		/* Destruimos la sesion */
+		$this->session->sess_destroy();
+		/* Direccion al login */
+		redirect('login');
 	}
 	//la url se conforma de controlador,metodo y parametro
 	/*public function test($id,$hola = 'peru'){

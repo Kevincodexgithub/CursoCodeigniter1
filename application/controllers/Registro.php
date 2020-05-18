@@ -16,7 +16,7 @@ class Registro extends CI_Controller {
 	public function index()
 	{
 		$data['menu'] = main_menu();
-		$this->load->view('registro',$data);
+		$this->load->view('RegistroView',$data);
 		//$query = $this->db->get('usuarios');
 		//var_dump($query->result());
 	}

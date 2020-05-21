@@ -85,7 +85,7 @@
 						
 						            <!--Menu list item-->
 						            <li class="<?= $this->uri->segment(1) == 'dashboard' ? 'active-sub active' : ''; ?>">
-						                <a href="#">
+						                <a href="<?= base_url('dashboard') ?>">
 						                    <i class="demo-pli-home"></i>
 						                    <span class="menu-title">Usuarios</span>
 											<i class="arrow"></i>
@@ -93,8 +93,8 @@
 						            </li>
 						
 						            <!--Menu list item-->
-						            <li>
-						                <a href="#">
+						            <li class="<?= $this->uri->segment(2) == 'create' || 'store' ? 'active-sub active' : ''; ?>">
+						                <a href="<?= base_url('users/create') ?>">
 						                    <i class="demo-pli-split-vertical-2"></i>
 						                    <span class="menu-title">Alta Medicos</span>
 											<i class="arrow"></i>

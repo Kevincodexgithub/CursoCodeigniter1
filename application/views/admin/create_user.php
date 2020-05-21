@@ -45,13 +45,15 @@
                     <div class="col-sm-7">
                         <div class="form-group">
                             <label class="control-label">Nombre de Usuario</label>
-                            <input name="user" type="text" placeholder="Ingrese nombre de usuario" class="form-control">
+                            <input name="user" value="<?php echo set_value('user'); ?>" type="text" placeholder="Ingrese nombre de usuario" class="form-control">
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('user'); ?></small>
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="form-group">
                             <label class="control-label">Correo</label>
-                            <input name="correo" type="email" placeholder="correo@gmail.com" class="form-control">
+                            <input name="correo" value="<?php echo set_value('correo'); ?>" type="email" placeholder="correo@gmail.com" class="form-control">
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('correo'); ?></small>
                         </div>
                     </div>
                     <div class="col-sm-2">
@@ -60,11 +62,12 @@
                             <!-- Default Bootstrap Select -->
                             <!--===================================================-->
                             <select name="rango" class="form-control selectpicker">
-                                <option>Seleccione el rango</option>
-                                <option>Administrador</option>
-                                <option>Usuario</option>                                
+                                <option selected value="">Seleccione el rango</option>
+                                <option <?= set_value('rango') == 'admin' ? 'selected' : '' ?> value="admin" >Administrador</option>
+                                <option <?= set_value('rango') == 'user' ? 'selected' : '' ?> value="user" >Usuario</option>                                
                             </select>
                             <!--===================================================-->
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('rango'); ?></small>
                         </div>
                     </div>
                 </div>
@@ -77,13 +80,15 @@
                     <div class="col-sm-5">
                         <div class="form-group">
                             <label class="control-label">Nombre(s)</label>
-                            <input name="name" type="text" placeholder="Inserte su nombre" class="form-control">
+                            <input name="name" value="<?php echo set_value('name'); ?>" type="text" placeholder="Inserte su nombre" class="form-control">
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('name'); ?></small>
                         </div>
                     </div>
                     <div class="col-sm-5">
                         <div class="form-group">
                             <label class="control-label">Apellidos</label>
-                            <input name="lastname" type="text" placeholder="Inserte su apellido" class="form-control">
+                            <input name="lastname" value="<?php echo set_value('lastname'); ?>" type="text" placeholder="Inserte su apellido" class="form-control">
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('lastname'); ?></small>
                         </div>
                     </div>
                     <div class="col-sm-2">
@@ -92,12 +97,13 @@
                             <!-- Default Bootstrap Select -->
                             <!--===================================================-->
                             <select name="area" class="form-control selectpicker">
-                                <option>Seleccione el area</option>
-                                <option>Medicina General</option>
-                                <option>Genética</option>
-                                <option>Clínica del Higado</option>
+                                <option selected value="">Seleccione el Area</option>
+                                <option <?= set_value('area') == 'medicinageneral' ? 'selected' : '' ?> value="medicinageneral" >Medicina General</option>
+                                <option <?= set_value('area') == 'genetica' ? 'selected' : '' ?> value="genetica" >Genética</option>
+                                <option <?= set_value('area') == 'clinicahigado' ? 'selected' : '' ?> value="clinicahigado" >Clínica del Higado</option>                                
                             </select>
                             <!--===================================================-->
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('area'); ?></small>
                         </div>
                     </div>
                 </div>
@@ -105,13 +111,15 @@
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label class="control-label">Especialidad</label>
-                            <input name="especialidad" type="text" placeholder="Ingrese la especialidad" class="form-control">
+                            <input name="especialidad" value="<?php echo set_value('especialidad'); ?>" type="text" placeholder="Ingrese la especialidad" class="form-control">
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('especialidad'); ?></small>
                         </div>
                     </div>
                     <div class="col-sm-6">
                         <div class="form-group">
                             <label class="control-label">Cédula</label>
-                            <input name="cedula" type="text"placeholder="xxxxxxxxx-x" class="form-control">
+                            <input name="cedula" value="<?php echo set_value('cedula'); ?>" type="text"placeholder="xxxxxxxxx-x" class="form-control">
+                            <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('cedula'); ?></small>
                         </div>
                     </div>                    
                 </div>

@@ -43,6 +43,7 @@ class Login extends CI_Controller {
 					'rango' => $res->rango,
 					'status' => $res->status,
 					'nombre_usuario' => $res->nombre_usuario,
+					'correo' => $res->correo,
 					'is_logged' => TRUE
 				);
 				$this->session->set_userdata($data);
@@ -58,7 +59,7 @@ class Login extends CI_Controller {
 		/* Borra todas las variables de sesión */
 		$this->session->unset_userdata($vars);
 		/* Destruimos la sesion */
-		$this->session->sess_destroy();
+		$this->session->sess_destroy();		
 		/* Direccion al login */
 		redirect('login');
 	}

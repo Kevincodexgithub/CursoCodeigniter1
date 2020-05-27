@@ -63,8 +63,8 @@
                             <!--===================================================-->
                             <select name="rango" class="form-control selectpicker">
                                 <option selected value="">Seleccione el rango</option>
-                                <option <?= set_value('rango') == 'admin' ? 'selected' : '' ?> value="admin" >Administrador</option>
-                                <option <?= set_value('rango') == 'user' ? 'selected' : '' ?> value="user" >Usuario</option>                                
+                                <option <?= set_value('rango') == '1' ? 'selected' : '' ?> value="1" >Administrador</option>
+                                <option <?= set_value('rango') == '2' ? 'selected' : '' ?> value="2" >Usuario</option>                                
                             </select>
                             <!--===================================================-->
                             <small class="help-block" data-bv-validator="notEmpty" data-bv-for="fullName"><?php echo form_error('rango'); ?></small>

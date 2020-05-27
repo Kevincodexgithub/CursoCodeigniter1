@@ -82,7 +82,7 @@
                             <div class="dropdown-menu dropdown-menu-sm dropdown-menu-right panel-default">
                                 <ul class="head-list">
                                     <li>
-                                        <a href="#"><i class="demo-pli-male icon-lg icon-fw"></i> Rango <?php if($this->session->rango == 2){echo "Admin"; }?></a>
+                                        <a href="#"><i class="demo-pli-male icon-lg icon-fw"></i><?php if($this->session->rango == 1){echo "Administrador"; } if($this->session->rango == 2){echo "Usario"; }?></a>
                                     </li>
                                     <li>
                                         <a href="#"><span class="badge badge-danger pull-right">9</span><i class="demo-pli-mail icon-lg icon-fw"></i> Messages</a>

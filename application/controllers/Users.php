@@ -6,7 +6,8 @@ class Users extends CI_Controller {
 	public function __construct(){
         parent:: __construct();
         $this->load->library(array('form_validation'));
-        $this->load->helper(array('users/users_rules'));
+        $this->load->helper(array('users/users_rules','string'));
+        $this->load->model('UsersModels');
     }
 
     public function index(){
@@ -30,11 +31,31 @@ class Users extends CI_Controller {
         $this->form_validation->set_rules(getCreateRules());
 
         if($this->form_validation->run() == FALSE){
-
+            $this->output->set_status_header(400);
         }else{
             //insertar el modelo
-            $this->session->set_flashdata('msg','El usuario a sido registrado');
-            redirect('users');
+            $user = array(
+                'nombre_usuario' => $user,
+                'correo' => $correo,
+                'contrasena' => random_string('alnum',8),
+                'status' => 1,
+                'rango' => $rango,                
+            );
+
+            $user_info = array(
+                'nombre' => $name,
+                'apellido' => $lastname,
+                'area' => $area,
+                'cedula' => $cedula,
+                'especialidad' => $especialidad,
+            );
+
+            if(!$this->UsersModels->save($user,$user_info)){
+                $this->output->set_status_header(500);
+            }else{
+                $this->session->set_flashdata('msg','El usuario a sido registrado');
+                redirect('users');
+            }
         };
         $vista = $this->load->view('admin/create_user','',true);
         $this->getTemplate($vista);

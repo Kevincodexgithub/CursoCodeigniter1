@@ -25,7 +25,7 @@
                                     </div>
                                     <div id="profile-nav" class="collapse list-group bg-trans">
                                         <a href="#" class="list-group-item">
-                                            <i class="demo-pli-male icon-lg icon-fw"></i> Rango <?php if($this->session->rango == 2){echo "Admin"; }?>
+                                            <i class="demo-pli-male icon-lg icon-fw"></i><?php if($this->session->rango == 1){echo "Administrador"; } if($this->session->rango == 2){echo "Usario"; }?>
                                         </a>
                                         <a href="#" class="list-group-item">
                                             <i class="demo-pli-gear icon-lg icon-fw"></i> Settings
@@ -93,7 +93,7 @@
 						            </li>
 						
 						            <!--Menu list item-->
-						            <li class="<?= $this->uri->segment(2) == 'create' || 'store' ? 'active-sub active' : ''; ?>">
+						            <li class="<?= $this->uri->segment(2) == 'create' ? 'active-sub active' : ''; $this->uri->segment(2) == 'store' ? 'active-sub active' : ''; ?>">
 						                <a href="<?= base_url('users/create') ?>">
 						                    <i class="demo-pli-split-vertical-2"></i>
 						                    <span class="menu-title">Alta Medicos</span>
